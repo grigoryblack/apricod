@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Tree, Checkbox, Button, Modal, Input } from 'antd';
-import { CheckboxChangeEvent } from 'antd/es/checkbox';
-import {Task} from "../../shared/interfaces/Inerfaces.ts";
+import { Task } from "../../shared/interfaces/Inerfaces.ts";
 import taskStore from "../../stores/TaskStore/TaskStore.ts";
 import './index.scss';
 
@@ -30,7 +29,7 @@ const TaskTree = observer(({ onSelectTask }: TaskTreeProps) => {
                     <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                         <Checkbox
                             checked={task.completed}
-                            onChange={(e) => handleCheckboxChange(e, task.id)}
+                            onChange={() => handleCheckboxChange(task.id)}
                             style={{ marginRight: '8px' }}
                         />
                         <span onClick={() => handleTaskClick(task)}>{task.title}</span>
@@ -45,7 +44,7 @@ const TaskTree = observer(({ onSelectTask }: TaskTreeProps) => {
         onSelectTask(task);
     };
 
-    const handleCheckboxChange = (e: CheckboxChangeEvent, taskId: string) => {
+    const handleCheckboxChange = (taskId: string) => {
         taskStore.toggleTaskCompletion(taskId);
     };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Button, Modal, Input, Popconfirm } from 'antd';
 import {Task} from "../../shared/interfaces/Inerfaces.ts";

@@ -1,5 +1,4 @@
 import taskStore from './TaskStore';
-import { Task } from '../../shared/interfaces/Inerfaces';
 
 describe('TaskStore', () => {
     beforeEach(() => {

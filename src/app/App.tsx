@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TaskTree from "../components/TaskTree/TaskTree.tsx";
 import TaskInfo from "../components/TaskInfo/TaskInfo.tsx";
 import {Task} from "../shared/interfaces/Inerfaces.ts";

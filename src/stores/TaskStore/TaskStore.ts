@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import {Task} from "../../shared/interfaces/Inerfaces.ts";
 
+
 class TaskStore {
     tasks: Task[] = [];
 
@@ -20,7 +21,9 @@ class TaskStore {
 
         if (parentId) {
             const parentTask = this.findTaskById(parentId);
-            parentTask?.subTasks.push(newTask);
+            if (parentTask) {
+                parentTask.subTasks.push(newTask);
+            }
         } else {
             this.tasks.push(newTask);
         }

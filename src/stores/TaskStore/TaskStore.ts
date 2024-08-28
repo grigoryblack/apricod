@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import {Task} from "../../shared/interfaces/Inerfaces.ts";
+import {Task} from "../../shared/interfaces/Inerfaces";
 
 
 class TaskStore {
